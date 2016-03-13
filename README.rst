@@ -4,23 +4,18 @@ click-didyoumean
 
 Enable git-like *did-you-mean* feature in click.
 
+It's as simple as this:
+
+.. code:: python
+
+    import click
+    from click_didyoumean import DYMGroup
+
+    @click.group(cls=DYMGroup)
+    def cli():
+        ...
+
 |demo|
-
-Example
--------
-
-This example is based on the official naval example from click:
-
-.. code::
-
-    $ naval shi move
-    Usage: naval [OPTIONS] COMMAND [ARGS]...
-
-    Error: No such command "shi".
-
-    Did you mean one of these?
-        ship
-
 
 Usage
 -----
