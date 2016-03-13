@@ -4,6 +4,8 @@ click-didyoumean
 
 Enable git-like *did-you-mean* feature in click.
 
+|demo|
+
 Example
 -------
 
@@ -125,6 +127,10 @@ Examples
 .. |build| image:: https://img.shields.io/travis/timofurrer/click-didyoumean/master.svg?style=flat
     :target: http://travis-ci.org/timofurrer/click-didyoumean
     :alt: Build status of the master branch
+
+.. |demo| image:: https://asciinema.org/a/duyr2j5d7w7fhpe7xf71rafgr.png
+    :target: https://asciinema.org/a/duyr2j5d7w7fhpe7xf71rafgr
+    :alt: Demo
 
 .. |license| image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
     :target: https://raw.githubusercontent.com/timofurrer/click-didyoumean/master/LICENSE
