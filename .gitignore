@@ -11,6 +11,7 @@ dist/
 
 # python tox files
 .tox/
+.cache/
 
 # python virtualenv
 env/

@@ -17,10 +17,10 @@ class DYMMixin(object):  # pylint: disable=too-few-public-methods
     to provide git-like *did-you-mean* functionality when
     a certain command is not registered.
     """
-    def __init__(self, name=None, whatever=None, max_suggestions=3, cutoff=0.5, **attrs):
-        self.max_suggestions = max_suggestions
-        self.cutoff = cutoff
-        super(DYMMixin, self).__init__(name, whatever, **attrs)
+    def __init__(self, *args, **kwargs):
+        self.max_suggestions = kwargs.pop("max_suggestions", 3)
+        self.cutoff = kwargs.pop("cutoff", 0.5)
+        super(DYMMixin, self).__init__(*args, **kwargs)
 
     def resolve_command(self, ctx, args):
         """
@@ -48,8 +48,6 @@ class DYMGroup(DYMMixin, click.Group):  # pylint: disable=too-many-public-method
     *did-you-mean* functionality when a certain
     command is not found in the group.
     """
-    def __init__(self, name=None, commands=None, max_suggestions=3, cutoff=0.5, **attrs):
-        super(DYMGroup, self).__init__(name, commands, max_suggestions, cutoff, **attrs)
 
 
 class DYMCommandCollection(DYMMixin, click.CommandCollection):  # pylint: disable=too-many-public-methods
@@ -58,5 +56,3 @@ class DYMCommandCollection(DYMMixin, click.CommandCollection):  # pylint: disabl
     *did-you-mean* functionality when a certain
     command is not found in the group.
     """
-    def __init__(self, name=None, sources=None, max_suggestions=3, cutoff=0.5, **attrs):
-        super(DYMCommandCollection, self).__init__(name, sources, max_suggestions, cutoff, **attrs)
