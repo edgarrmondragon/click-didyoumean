@@ -1,6 +1,6 @@
 click-didyoumean
 ================
-|pypi| |license|
+|pypi| |build| |license|
 
 Enable git-like *did-you-mean* feature in click.
 
@@ -121,6 +121,10 @@ Examples
 .. |pypi| image:: https://img.shields.io/pypi/v/click-didyoumean.svg?style=flat&label=version
     :target: https://pypi.python.org/pypi/click-didyoumean
     :alt: Latest version released on PyPi
+
+.. |build| image:: https://img.shields.io/travis/timofurrer/click-didyoumean/master.svg?style=flat
+    :target: http://travis-ci.org/timofurrer/click-didyoumean
+    :alt: Build status of the master branch
 
 .. |license| image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
     :target: https://raw.githubusercontent.com/timofurrer/click-didyoumean/master/LICENSE
