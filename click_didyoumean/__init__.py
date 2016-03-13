@@ -8,7 +8,7 @@
 import click
 import difflib
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 
 class DYMMixin(object):  # pylint: disable=too-few-public-methods
