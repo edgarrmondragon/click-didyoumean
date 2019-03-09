@@ -21,7 +21,7 @@ setup(
     install_requires=["click"],
     description="Enable git-like did-you-mean feature in click.",
     classifiers=[
-        "License :: OSI Approved :: BSD License",
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
     ],
