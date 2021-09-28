@@ -1,13 +1,8 @@
-# -*- coding: utf-8 -*-
-
-"""
-Module to test functionality of the click ``did-you-mean`` extension.
-"""
-
-import pytest
 import click
+import pytest
 from click.testing import CliRunner
-from click_didyoumean import DYMGroup, DYMCommandCollection
+
+from click_didyoumean import DYMCommandCollection, DYMGroup
 
 
 @pytest.fixture(scope="function")

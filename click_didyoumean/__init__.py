@@ -1,26 +1,24 @@
-# -*- coding: utf-8 -*-
-
 """
-    Extension for the python ``click`` module to provide
-    a group with a git-like *did-you-mean* feature.
+Extension for ``click`` to provide a group
+with a git-like *did-you-mean* feature.
 """
 
-import click
 import difflib
 
-__version__ = "0.0.3"
+import click
 
 
-class DYMMixin(object):  # pylint: disable=too-few-public-methods
+class DYMMixin:
     """
     Mixin class for click MultiCommand inherited classes
     to provide git-like *did-you-mean* functionality when
     a certain command is not registered.
     """
+
     def __init__(self, *args, **kwargs):
         self.max_suggestions = kwargs.pop("max_suggestions", 3)
         self.cutoff = kwargs.pop("cutoff", 0.5)
-        super(DYMMixin, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def resolve_command(self, ctx, args):
         """
@@ -33,15 +31,21 @@ class DYMMixin(object):  # pylint: disable=too-few-public-methods
         except click.exceptions.UsageError as error:
             error_msg = str(error)
             original_cmd_name = click.utils.make_str(args[0])
-            matches = difflib.get_close_matches(original_cmd_name,
-                                                self.list_commands(ctx), self.max_suggestions, self.cutoff)
+            matches = difflib.get_close_matches(
+                original_cmd_name,
+                self.list_commands(ctx),
+                self.max_suggestions,
+                self.cutoff,
+            )
             if matches:
-                error_msg += '\n\nDid you mean one of these?\n    %s' % '\n    '.join(matches)  # pylint: disable=line-too-long
+                fmt_matches = "\n    ".join(matches)
+                error_msg += "\n\n"
+                error_msg += f"Did you mean one of these?\n    {fmt_matches}"
 
             raise click.exceptions.UsageError(error_msg, error.ctx)
 
 
-class DYMGroup(DYMMixin, click.Group):  # pylint: disable=too-many-public-methods
+class DYMGroup(DYMMixin, click.Group):
     """
     click Group to provide git-like
     *did-you-mean* functionality when a certain
@@ -49,7 +53,7 @@ class DYMGroup(DYMMixin, click.Group):  # pylint: disable=too-many-public-method
     """
 
 
-class DYMCommandCollection(DYMMixin, click.CommandCollection):  # pylint: disable=too-many-public-methods
+class DYMCommandCollection(DYMMixin, click.CommandCollection):
     """
     click CommandCollection to provide git-like
     *did-you-mean* functionality when a certain
