@@ -21,7 +21,7 @@ jobs:
       - run: pip install -U pip poetry
       - run: poetry config virtualenvs.create false
       - run: poetry install
-      - run: flake8 src/ tests/
+      - run: flake8 --max-line-length 88 src/ tests/
       - run: black --diff --check src/ tests/
       - run: mypy src/ tests/
       - run: pytest
