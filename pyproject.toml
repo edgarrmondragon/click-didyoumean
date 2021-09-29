@@ -4,6 +4,7 @@ version = "0.3.0"
 description = "Enables git-like *did-you-mean* feature in click"
 authors = ["Timo Furrer <timo.furrer@roche.com>"]
 license = "MIT"
+repository = "https://github.com/click-contrib/click-didyoumean"
 
 [tool.poetry.dependencies]
 python = "^3.6.2"
