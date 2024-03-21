@@ -9,7 +9,7 @@ repository = "https://github.com/click-contrib/click-didyoumean"
 readme = "README.rst"
 
 [tool.poetry.dependencies]
-python = "^3.6.2"
+python = ">=3.6.2"
 click = ">=7"
 
 [tool.poetry.dev-dependencies]
