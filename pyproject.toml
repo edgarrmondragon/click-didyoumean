@@ -15,7 +15,7 @@ click = ">=7"
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
 black = "^21.9b0"
-isort = "^5.9.3"
+isort = {version = "^5.9.3", python = "<4"}
 flake8 = "^3.9.2"
 mypy = "^0.910"
 
