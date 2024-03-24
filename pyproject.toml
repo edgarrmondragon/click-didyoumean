@@ -9,14 +9,14 @@ repository = "https://github.com/click-contrib/click-didyoumean"
 readme = "README.rst"
 
 [tool.poetry.dependencies]
-python = ">=3.6.2"
+python = ">=3.8"
 click = ">=7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
-black = "^21.9b0"
-isort = {version = "^5.9.3", python = "<4"}
-flake8 = "^3.9.2"
+black = "^24.3.0"
+isort = "^5.9.3"
+flake8 = {version = "^7.0.0", python = ">=3.8.1"}
 mypy = "^0.910"
 
 [build-system]
