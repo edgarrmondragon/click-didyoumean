@@ -14,10 +14,23 @@ click = ">=7"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
-black = "^24.3.0"
-isort = "^5.9.3"
-flake8 = {version = "^7.0.0", python = ">=3.8.1"}
 mypy = "^0.910"
+ruff = "0.3.4"
+
+[tool.ruff]
+src = ["src"]
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["ANN101", "COM812", "D", "FA", "ISC001"]
+
+[tool.ruff.lint.flake8-type-checking]
+strict = true
+
+[tool.ruff.lint.per-file-ignores]
+"examples/**" = ["ANN", "D", "INP001"]
+"tests/**" = ["ANN", "D", "INP001", "S101"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
