@@ -5,8 +5,8 @@ from click.testing import CliRunner
 from click_didyoumean import DYMCommandCollection, DYMGroup
 
 
-@pytest.fixture(scope="function")
-def runner(request):
+@pytest.fixture()
+def runner():
     return CliRunner()
 
 
