@@ -18,12 +18,11 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: pip install -U pip poetry
-      - run: poetry config virtualenvs.create false
       - run: poetry install
-      - run: ruff check src/ tests/
-      - run: ruff format --diff --check src/ tests/
-      - run: mypy src/ tests/
-      - run: pytest
+      - run: poetry run ruff check src/ tests/
+      - run: poetry run ruff format --diff --check src/ tests/
+      - run: poetry run mypy src/ tests/
+      - run: poetry run pytest
 
   cd:
     needs: [ci]
